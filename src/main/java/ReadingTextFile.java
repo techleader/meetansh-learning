@@ -10,13 +10,22 @@ public class ReadingTextFile {
         File i = new File("C:\\Users\\ADMIN\\Desktop\\test.txt");
         Scanner scan = new Scanner(i);
 
-        while(scan.hasNextLine()){
-            String data = scan.nextLine();;
-            int count =data.length();
+        String[] splitStr;
+        int totalWord = 0;
+        while (scan.hasNextLine()) {
+
+            String data = scan.nextLine();
+            int count = data.length();
             String line = data;
-            String[] splittedStr = line.split(" ");
-            System.out.println(line.toUpperCase() + " : " + count + " - words : " + splittedStr.length) ;
+            splitStr = line.split(" ");
+            int wordCount = splitStr.length;
+            totalWord=totalWord+wordCount;
+            System.out.println(line.toUpperCase() + " = " + count + " - words = " + wordCount);
+
+        }
+        System.out.println("total word in the file are "+totalWord);
+
         }
 
     }
-}
+
